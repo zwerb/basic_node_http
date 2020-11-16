@@ -3,8 +3,8 @@ module.exports = {
     script: 'server-http.js',
     watch: '.'
   }, {
-    script: './service-worker/',
-    watch: ['./service-worker']
+    script: 'server-express.js',
+    watch: '.'
   }],
 
   deploy : {

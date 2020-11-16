@@ -15,16 +15,28 @@ npm install
 ## Get Started (after First install)
 
 ```
-npx pm2 start server-http.js
+npx pm2 start
+    # or: npx pm2 start <server-http.js|server-express.js>
 
-npx pm2 start server-express.js
-
+npx pm2 status
+    
 # then log into browser:
         # for server-http
     http://localhost:3000 
         # for server-express
     http://localhost:3000 
 ```
+
+## To check Server Status and Restart
+
+```
+npx pm2 status 
+
+npx pm2 restart all
+    # or replace 'all' with specific script nanme e.g. server-express.js
+
+npx pm2 kill
+``
 
 
 ### Reference: Packages
