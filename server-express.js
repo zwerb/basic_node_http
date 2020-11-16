@@ -1,12 +1,12 @@
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 
 const app = express();
 
-const html_path = '/html-express'
+const html_path = "/html-express";
 
-app.get('/',(req,res,next)=>{
-    res.send(`
+app.get("/", (req, res, next) => {
+  res.send(`
     <html>
     <head>
       <title>Express Server</title>
@@ -21,24 +21,22 @@ app.get('/',(req,res,next)=>{
     `);
 });
 
-app.get('/sandwiches',(req,res,next)=>{
-    res.send(`
-    <h1> Sandwiches Node Express Page:</h1>
-    <a href="/">Home</a>
-    <ul>
-    <li>BLT</li>
-    <li>Turkey</li>
-    <li>Ham</li>
-    <li>Compliment</li>
-    </ul>
-    `);
+let sandwiches_resource_path = "/sandwiches";
+
+app.get(sandwiches_resource_path, (req, res, next) => {
+  res.sendFile(path.join(__dirname + html_path + sandwiches_resource_path + "/index.html")
+  );
 });
 
-let resource_path = '/puppies';
+let puppies_resource_path = "/puppies";
 
-app.get(resource_path,(req,res,next)=>{
-    res.sendFile(path.join(__dirname + html_path + resource_path + '/index.html'));
+app.get(puppies_resource_path, (req, res, next) => {
+  res.sendFile(
+    path.join(__dirname + html_path + puppies_resource_path + "/index.html")
+  );
 });
 
 const PORT = 3030;
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log(`Listening on port: ${PORT}`);
+});
