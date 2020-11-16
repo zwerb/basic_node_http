@@ -36,7 +36,7 @@ npx pm2 restart all
     # or replace 'all' with specific script nanme e.g. server-express.js
 
 npx pm2 kill
-``
+```
 
 
 ### Reference: Packages
