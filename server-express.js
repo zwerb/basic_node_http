@@ -3,7 +3,12 @@ const path = require("path");
 
 const app = express();
 
-const html_path = "/html-express";
+const html_path = "/public-express";
+
+app.get('*',(req, res, next) => {
+    console.log(`Request: ${req.method} : ${req.url}`);
+    next();
+});
 
 app.get("/", (req, res, next) => {
   res.send(`
@@ -17,14 +22,13 @@ app.get("/", (req, res, next) => {
       <a href="/puppies">Puppies</a>
     </body>
   </html>
-  
     `);
 });
 
 let sandwiches_resource_path = "/sandwiches";
 
 app.get(sandwiches_resource_path, (req, res, next) => {
-  res.sendFile(path.join(__dirname + html_path + sandwiches_resource_path + "/index.html")
+  res.sendFile(path.join(__dirname,html_path,sandwiches_resource_path,"/index.html")
   );
 });
 
@@ -32,7 +36,7 @@ let puppies_resource_path = "/puppies";
 
 app.get(puppies_resource_path, (req, res, next) => {
   res.sendFile(
-    path.join(__dirname + html_path + puppies_resource_path + "/index.html")
+    path.join(__dirname,html_path,puppies_resource_path,"/index.html")
   );
 });
 

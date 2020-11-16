@@ -14,6 +14,8 @@ npm install
 
 ## Get Started (after First install)
 
+To start all servers as a Managed Daemon with pm2
+
 ```
 npx pm2 start
     # or: npx pm2 start <server-http.js|server-express.js>
@@ -38,6 +40,13 @@ npx pm2 restart all
 npx pm2 kill
 ```
 
+## To Run an Individual Server file as a Single Process
+
+```
+node server-http.js
+
+node server-http.js
+```
 
 ### Reference: Packages
 
@@ -49,3 +58,5 @@ npx pm2 kill
 `pm2`
     # a lib to route through a random managed domain
 `ngrok`
+    # logging middleware
+`morgan`

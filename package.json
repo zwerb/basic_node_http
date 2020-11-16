@@ -20,6 +20,7 @@
   "homepage": "https://github.com/zwerb/basic_node_http#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "morgan": "^1.10.0",
     "ngrok": "^3.3.0",
     "nodemon": "^2.0.6",
     "pm2": "^4.5.0"
